@@ -17,11 +17,11 @@ function appendOperator(operator) {
     document.getElementById('screen').innerText = current + ' ' + operator + ' ';
 }
 function calculate() {
-    let current = document.getElementById('screen').innerText;
+    const screen = document.getElementById('screen');
     try {
-        let result = eval(current);
-        document.getElementById('screen').innerText = result;
+        let result = eval(screen.innerText);
+        screen.innerText = parseFloat(result.toFixed(3));
     } catch (error) {
-        document.getElementById('screen').innerText = 'Error';
+        screen.innerText = "Error";
     }
 }
